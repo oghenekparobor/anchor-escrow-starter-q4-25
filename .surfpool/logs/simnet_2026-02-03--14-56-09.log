@@ -1,0 +1,18 @@
+[2026-02-03--14-56-09 INFO actix_server::builder] starting 5 workers
+[2026-02-03--14-56-09 INFO actix_server::server] Tokio runtime found; starting in existing Tokio runtime
+[2026-02-03--14-56-09 INFO actix_server::server] starting service: "actix-web-service-127.0.0.1:18488", workers: 5, listening on: 127.0.0.1:18488
+[2026-02-03--14-56-13 INFO parity_ws] Listening for new connections on 127.0.0.1:8900.
+[2026-02-03--14-56-22 INFO parity_ws::io] Accepted a new tcp connection from 127.0.0.1:57362.
+[2026-02-03--14-56-35 INFO parity_ws::io] Accepted a new tcp connection from 127.0.0.1:57391.
+[2026-02-03--14-56-35 ERROR litesvm] Program account 6bDDXuYZBfqFQ9ihBhZ8g6zgZLG3LGrUdyxNuDoTqVRr is not executable.
+[2026-02-03--14-56-45 ERROR litesvm] Program account 6bDDXuYZBfqFQ9ihBhZ8g6zgZLG3LGrUdyxNuDoTqVRr is not executable.
+[2026-02-03--14-56-46 INFO txtx::svm::deploy_program] [Recovery Instructions] - An ephemeral authority account will be created and funded to write to the buffer account.
+[2026-02-03--14-56-46 INFO txtx::svm::deploy_program] [Recovery Instructions] - Please save the following information in case the deployment fails and the account needs to be recovered:
+[2026-02-03--14-56-46 INFO txtx::svm::deploy_program] [Recovery Instructions] - Ephemeral authority public key: 6zDTyykqkUBdbVgyf92xk8BFo3S3866jrPtEnWHT9Uxd
+[2026-02-03--14-56-46 INFO txtx::svm::deploy_program] [Recovery Instructions] - Ephemeral authority secret key: [193, 97, 178, 175, 187, 90, 205, 184, 33, 123, 182, 93, 173, 237, 136, 104, 0, 239, 17, 187, 168, 18, 75, 139, 37, 101, 136, 70, 203, 119, 130, 37, 88, 242, 162, 157, 47, 253, 114, 72, 163, 173, 59, 219, 37, 75, 221, 158, 109, 210, 235, 180, 131, 43, 188, 62, 191, 95, 242, 241, 52, 205, 55, 6]
+[2026-02-03--14-56-57 INFO actix_server::accept] accept thread stopped
+[2026-02-03--14-56-57 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-56-57 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-56-57 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-56-57 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-56-57 INFO actix_server::worker] shutting down idle worker

@@ -140,18 +140,39 @@ describe("anchor_escrow_q4_25", () => {
     takerAtaA = getAssociatedTokenAddressSync(mintA, taker.publicKey);
     makerAtaB = getAssociatedTokenAddressSync(mintB, maker);
 
+    // Create the ATAs that will receive tokens
+    const createTakerAtaATx = new anchor.web3.Transaction().add(
+      createAssociatedTokenAccountInstruction(
+        taker.publicKey,
+        takerAtaA,
+        taker.publicKey,
+        mintA
+      )
+    );
+    await provider.sendAndConfirm(createTakerAtaATx, [taker]);
+
+    const createMakerAtaBTx = new anchor.web3.Transaction().add(
+      createAssociatedTokenAccountInstruction(
+        provider.wallet.publicKey,
+        makerAtaB,
+        maker,
+        mintB
+      )
+    );
+    await provider.sendAndConfirm(createMakerAtaBTx);
+
     // Take
     await program.methods
-      .take(new anchor.BN(depositAmount), new anchor.BN(receiveAmount))
+      .take(seed2, new anchor.BN(receiveAmount), new anchor.BN(depositAmount))
       .accountsStrict({
         taker: taker.publicKey,
         maker: maker,
         mintA: mintA,
         mintB: mintB,
+        escrow: escrowPda,
         takerAtaA: takerAtaA,
         takerAtaB: takerAtaB,
         makerAtaB: makerAtaB,
-        escrow: escrowPda,
         vault: vault,
         associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
         tokenProgram: TOKEN_PROGRAM_ID,

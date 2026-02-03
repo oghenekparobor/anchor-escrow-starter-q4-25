@@ -14,3 +14,9 @@
 [2026-02-03--13-59-32 INFO txtx::svm::deploy_program] Complete - Ephemeral authority account closed and leftover funds returned to payer
 [2026-02-03--13-59-34 INFO parity_ws::io] Accepted a new tcp connection from 127.0.0.1:57489.
 [2026-02-03--13-59-36 INFO parity_ws::io] Accepted a new tcp connection from 127.0.0.1:57498.
+[2026-02-03--14-11-09 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-11-09 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-11-09 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-11-09 INFO actix_server::worker] shutting down idle worker
+[2026-02-03--14-11-09 INFO actix_server::accept] accept thread stopped
+[2026-02-03--14-11-09 INFO actix_server::worker] shutting down idle worker
