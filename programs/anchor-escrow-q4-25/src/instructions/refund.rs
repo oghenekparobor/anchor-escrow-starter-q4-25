@@ -25,7 +25,7 @@ pub struct Refund<'info> {
         mut,
         close = maker,
         has_one = mint_a,
-        has_one = maker,
+        has_one = maker, // verify existence and verifies inclusion of the seed
         seeds = [b"escrow", maker.key().as_ref(), &escrow.seed.to_le_bytes()],
         bump = escrow.bump
     )]
@@ -80,6 +80,20 @@ impl<'info> Refund<'info> {
             signer_seeds,
         );
 
-        close_account(close_cpi_ctx)
+        // manually moves the lamport and it works if you own the PDA
+        // let amount = self.escrow.get_lamports();
+        // self.escrow.sub_lamports(amount)?;
+        // self.maker.add_lamports(amount)?;
+
+        // let binding = self.escrow.to_account_info();
+        // let mut data = binding.data.borrow_mut();
+
+        // data.fill(0); // important to fill the data with 0s to avoid any potential reinitialization of the data
+
+        // **self.maker.to_account_info().try_borrow_mut_lamports()? += amount;
+
+        close_account(close_cpi_ctx)?;
+
+        Ok(())
     }
 }

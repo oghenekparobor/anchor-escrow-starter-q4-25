@@ -142,7 +142,7 @@ describe("anchor_escrow_q4_25", () => {
 
     // Take
     await program.methods
-      .take()
+      .take(new anchor.BN(depositAmount), new anchor.BN(receiveAmount))
       .accountsStrict({
         taker: taker.publicKey,
         maker: maker,
